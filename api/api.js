@@ -1,8 +1,11 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const http = require('http');
 
 const app = express();
 const httpServer = http.createServer(app);
+
+app.use(bodyParser.json());
 
 const api = {
   listen(customPort, database) {
@@ -15,6 +18,20 @@ const api = {
       }
       database.find(query).sort({ createdAt: -1 }).exec((err, docs) => {
         res.json(docs);
+      });
+    });
+
+    app.post('/snapshots', (req, res)=> {
+      const name = req.body.name;
+      const data = req.body.data;
+      const createdAt = new Date();
+
+      database.insert({
+        name: name,
+        data: data,
+        createdAt: createdAt,
+      }, (err, doc) => {
+        res.status(201).json(doc);
       });
     });
 

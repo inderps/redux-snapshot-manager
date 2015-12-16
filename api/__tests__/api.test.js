@@ -88,13 +88,13 @@ describe('api', () => {
 
       server
       .post('/snapshots')
+      .set('Accept', 'application/json')
       .send(snapshot)
       .expect(201)
       .end((err, res) => {
         res.status.should.equal(201);
-        const snapshots = res.body;
-        snapshots.length.should.equal(1);
-        snapshots[0].name.should.eql('credit card flow: test data');
+        const savedSnapshot = res.body;
+        savedSnapshot.name.should.eql('credit card flow: test data');
         done();
       });
     });

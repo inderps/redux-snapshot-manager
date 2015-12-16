@@ -24,6 +24,7 @@
     "supertest": "^1.1.0"
   },
   "dependencies": {
+    "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "nedb": "^1.5.0"
   }
