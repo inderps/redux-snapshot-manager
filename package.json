@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js --harmony",
-    "lint": "eslint lib",
-    "test": "npm run lint && mocha --compilers js:babel/register --recursive",
+    "lint": "eslint api",
+    "test": "npm run lint && mocha --compilers js:babel/register --recursive ./api"
   },
   "repository": "https://github.com/inderps/redux-snapshot-manager.git",
   "author": "Inderpal Singh",
@@ -19,6 +19,10 @@
     "eslint": "^1.10.1",
     "eslint-config-airbnb": "^1.0.0",
     "eslint-plugin-react": "^3.10.0",
-    "mocha": "^2.3.4"
+    "mocha": "^2.3.4",
+    "supertest": "^1.1.0"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
   }
 }
