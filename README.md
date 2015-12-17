@@ -9,8 +9,7 @@ Visit this [link](https://github.com/inderps/redux-qa-monitor)
 
 ## What is it made up of?
 
-It is an expressjs based node application using [nedb](https://github.com/louischatriot/nedb) as backend database. So you don't have to install any external libraries or dependencies. npm is enough
-
+It is an expressjs based application using [nedb](https://github.com/louischatriot/nedb) as backend database.
 
 ## Steps to setup
 
