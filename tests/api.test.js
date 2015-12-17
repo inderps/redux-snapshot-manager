@@ -1,8 +1,8 @@
 import chai from 'chai';
-import {describe, it, before, after, beforeEach, afterEach} from 'mocha';
+import {describe, it, before, beforeEach, afterEach} from 'mocha';
 import supertest from 'supertest';
 import Datastore from 'nedb';
-import api from './../api';
+import setupApi from './../api/api';
 import fs from 'fs';
 
 chai.expect();
@@ -15,14 +15,12 @@ describe('api', () => {
   let testDb;
 
   before(() => {
-    fs.unlinkSync('test-snapshots.db');
+    if (fs.existsSync('test-snapshots.db')) {
+      fs.unlinkSync('test-snapshots.db');
+    }
     testDb = new Datastore({ filename: 'test-snapshots.db', autoload: true });
-    api.listen(port, testDb);
+    setupApi(port, testDb);
     server = supertest.agent('http://localhost:' + port);
-  });
-
-  after(() => {
-    api.close();
   });
 
   afterEach((done) => {
