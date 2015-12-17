@@ -1,7 +1,7 @@
 Redux Snapshot Manager
 =========
 
-An api to save redux store as snapshots of your app. It can be used with redux-qa-monitor to share snapshots across network
+An api to save redux store as snapshots of your app. It can be used with [redux-qa-monitor](https://github.com/inderps/redux-qa-monitor) to share snapshots across network
 
 ## What Problem is it trying to solve?
 
@@ -31,6 +31,7 @@ Just do it and send me pull request
 ### Features in pipeline
 
  * Edit or Delete a existing snapshot
+ * can make it work with other redux devtools
  * Can make it work with other databases
 
 ## License
