@@ -35,6 +35,6 @@ Just do it and send me pull request
 
 ## License
 
-MIT license; see [LICENSE](./LICENSE).
+MIT license; see [LICENSE](./LICENSE.md).
 
 (c) 2015 by Inderpal Singh
