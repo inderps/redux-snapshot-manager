@@ -1,6 +1,8 @@
-const api = require('./api/api');
-const Datastore = require('nedb');
+var setupApi = require('./build/api').default;
+var Datastore = require('nedb');
 
-const apiDb = new Datastore({ filename: 'snapshots.db', autoload: true });
+var apiDb = new Datastore({ filename: 'snapshots.db', autoload: true });
 
-api.listen(~~process.env.PORT || 3000, apiDb);
+setupApi(~~process.env.PORT || 3000, apiDb, function() {
+  console.log('Redux Snapshot Manager started on port:3000');
+});
